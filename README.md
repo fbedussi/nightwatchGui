@@ -13,7 +13,7 @@ nightwatchGui
 
 #How it works
 It reads the nightwatch.config.js to get the enviroments defined, and it scrapes the "features" folder to get the features definitions. Then it displays both the environments and the features available on a web page where is possible to select the features to run by a combination of tags, folders and files. Finnaly it runs nightwatch with the selected options.
-![alt text](screenshot.png)
+![alt text](https://github.com/fbedussi/nightwatchGui/raw/master/screenshot.png)
 
 #To do
 Add cli arguments to customize the folders names and config file location. 
