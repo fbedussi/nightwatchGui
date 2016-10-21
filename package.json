@@ -1,5 +1,5 @@
 {
-  "name": "spygui",
+  "name": "nightwatchGui",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,7 +9,7 @@
     "watch:css": "postcss -u autoprefixer -o public/style-build.css public/style.css -w",
     "gui": "node app.js"
   },
-  "author": "",
+  "author": "Francesco Bedussi",
   "license": "ISC",
   "dependencies": {
     "ansi-to-html": "^0.4.2",
