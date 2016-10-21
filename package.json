@@ -1,0 +1,26 @@
+{
+  "name": "spygui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss -u autoprefixer -o public/style-build.css public/style.css",
+    "watch:css": "postcss -u autoprefixer -o public/style-build.css public/style.css -w",
+    "gui": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ansi-to-html": "^0.4.2",
+    "body-parser": "^1.15.0",
+    "cross-spawn": "^2.2.3",
+    "express": "^4.13.4",
+    "gherkin": "^4.0.0",
+    "open": "0.0.5",
+    "socket.io": "^1.4.6"
+  },
+  "bin": {
+  	"nightwatchGui": "index.js"
+  }
+}
