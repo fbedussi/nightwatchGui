@@ -12,7 +12,6 @@ import handleFileClick from './handleFileClick';
 import resetClick from './resetClick';
 import {storeFeatures, globalTags} from './globals';
 
-
 getRequest(host+'/environments', function (responseObj) {
     var parent = document.getElementById('environmentsFormInner');
 

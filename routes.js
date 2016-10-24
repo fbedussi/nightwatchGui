@@ -30,7 +30,6 @@ module.exports = function (app) {
     });
     
     app.post('/launchspy', function (req, res) {
-        //res.end();
         startTest(req.body, function (err, data) {
             if (err) {
                 res.status(500).send(err);
