@@ -8,20 +8,21 @@ var io = require('socket.io')(http);
 function init (hostName, port) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
-
-    // eslint-disable-next-line no-unused-vars
+    
     var routes = require("./routes.js")(app);
 
     var server = http.listen(port, function () {
         console.log("Listening on port %s...", server.address().port);
+
+        open('http://'+hostName+':' + server.address().port, function (err) {
+            if (err) {
+                console.log('The user closed the browser');
+                throw err;
+            }
+        });
     });
 
-    open('http://'+hostName+':' + server.address().port, function (err) {
-        if (err) {
-            console.log('The user closed the browser');
-            throw err;
-        }
-    });
+
 }
 
 module.exports = {
