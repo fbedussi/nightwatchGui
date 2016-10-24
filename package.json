@@ -9,6 +9,13 @@
     "watch:css": "postcss -u autoprefixer -o public/style-build.css public/style.css -w",
     "gui": "node app.js"
   },
+  "repository": "https://github.com/fbedussi/nightwatchGui.git",
+  "config": {
+    "featuresParentFolder": "",
+    "featuresFolderName": "features",
+    "nightwatchConfigJsFolder": "",
+    "excludeFolders": "['step_definitions']"
+  },
   "author": "Francesco Bedussi",
   "license": "ISC",
   "dependencies": {

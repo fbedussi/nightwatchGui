@@ -14,11 +14,11 @@ module.exports = function (paramObj, done) {
             env: paramObj.environments.join(',')
         };
         if (paramObj.dir !== 'all') {
-            confObj.group = path.relative(path.join(config.startingFolder, 'features'), paramObj.dir);
+            confObj.group = path.relative(path.join(config.featuresParentFolder, config.featuresFolderName), paramObj.dir);
         }
         if (paramObj.exclude) {
             confObj.skipgroup = paramObj.exclude.map(function (excludeFullPath) {
-                return path.relative(path.join(config.startingFolder, 'features'), excludeFullPath);
+                return path.relative(path.join(config.featuresParentFolder, config.featuresFolderName), excludeFullPath);
             }).join(',');
         }
         if (paramObj.file) {
