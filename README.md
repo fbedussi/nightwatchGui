@@ -14,7 +14,7 @@ then move to the main folder of your nightwatch-cucumber project and run:
 ````
 nightwatchGui
 ````
-The module assumes that the main folder of your project contains both the ````nightwatch.conf.js```` file and the ````features```` folder containing the test cases written in Gherkin. If your setup is different you can customise all the paths in the ````config```` key in the ````package.json```` file:
+The module assumes the standard nightwatch-cucumber foldering, where the main project folder contains both the ````nightwatch.conf.js```` file and the `features` folder containing the test cases written in Gherkin. If your setup is different, you can customise all the paths in the `config` key in the `package.json` file:
 ````
 "config": {
     "featuresParentFolder": "", //default current folder
@@ -23,6 +23,16 @@ The module assumes that the main folder of your project contains both the ````ni
     "excludeFolders": "['step_definitions']",
     "nightwatchExecutable": "" //default 'node_modules/.bin/nightwatch'
   }
+````
+or, if you don't want to mess up with the `package.json` file (for instance because you have installed the module globally), or if you want to manage these settings on a per project basis you can create the file `nightwatch-gui-config.json` with the same content of the `config` key seen above:
+````
+{
+    "featuresParentFolder": "", //default current folder
+    "featuresFolderName": "", //features 'features'
+    "nightwatchConfigJsFolder": "", //default current folder
+    "excludeFolders": "['step_definitions']",
+    "nightwatchExecutable": "" //default 'node_modules/.bin/nightwatch'
+}
 ````
 
 

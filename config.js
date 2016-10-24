@@ -1,10 +1,16 @@
 var path = require('path');
-var packageJson = require('./package.json');
+try {
+    require.resolve(path.join(path.resolve(), 'nightwatch-gui-config.json'));
+    var configFile = require(path.join(path.resolve(), 'nightwatch-gui-config.json'));
+} catch(e) {
+    console.log('No nightwatch-gui-config.json file found, using defaults in package.json');
+    var configFile = require('./package.json').config;
+}
 
 module.exports = {
-    nigthwatchConfigJsFolder: (packageJson.config.nightwatchConfigJsFolder && packageJson.config.nightwatchConfigJsFolder.length)? packageJson.config.nightwatchConfigJsFolder : path.resolve(),
-    featuresParentFolder: (packageJson.config.featuresParentFolder && packageJson.config.featuresParentFolder.length)? packageJson.config.featuresParentFolder : path.resolve(),
-    featuresFolderName: (packageJson.config.featuresFolderName && packageJson.config.featuresFolderName.length)? packageJson.config.featuresFolderName : 'features',
-    excludeFolders: (packageJson.config.excludeFolders && packageJson.config.excludeFolders.length)? packageJson.config.excludeFolders : ['step_definitions'],
-    nightwatchExecutable: (packageJson.config.nightwatchExecutable && packageJson.config.nightwatchExecutable.length)? packageJson.config.nightwatchExecutable :'node_modules/.bin/nightwatch'
+    nigthwatchConfigJsFolder: (configFile.nightwatchConfigJsFolder && configFile.nightwatchConfigJsFolder.length)? configFile.nightwatchConfigJsFolder : path.resolve(),
+    featuresParentFolder: (configFile.featuresParentFolder && configFile.featuresParentFolder.length)? configFile.featuresParentFolder : path.resolve(),
+    featuresFolderName: (configFile.featuresFolderName && configFile.featuresFolderName.length)? configFile.featuresFolderName : 'features',
+    excludeFolders: (configFile.excludeFolders && configFile.excludeFolders.length)? configFile.excludeFolders : ['step_definitions'],
+    nightwatchExecutable: (configFile.nightwatchExecutable && configFile.nightwatchExecutable.length)? configFile.nightwatchExecutable :'node_modules/.bin/nightwatch'
 };
