@@ -16,6 +16,10 @@ import {storeFeatures, globalTags} from './globals';
 getRequest(host+'/environments', function (responseObj) {
     var parent = document.getElementById('environmentsFormInner');
 
+    if (typeof responseObj !== 'object') {
+        return;
+    }
+
     Object.keys(responseObj).forEach(function (key) {
         insertInput({
             type: 'checkbox',
@@ -31,6 +35,10 @@ getRequest(host+'/environments', function (responseObj) {
 });
 
 getRequest(host+'/features', function (responseObj) {
+    if (typeof responseObj !== 'object') {
+        return;
+    }
+
     //Cache response
     storeFeatures.set(responseObj);
 
