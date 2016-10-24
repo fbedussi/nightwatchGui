@@ -14,7 +14,8 @@
     "featuresParentFolder": "",
     "featuresFolderName": "features",
     "nightwatchConfigJsFolder": "",
-    "excludeFolders": "['step_definitions']"
+    "excludeFolders": "['step_definitions']",
+    "nightwatchExecutable": ""
   },
   "author": "Francesco Bedussi",
   "license": "ISC",

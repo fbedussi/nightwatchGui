@@ -32,7 +32,8 @@ module.exports = function (paramObj, done) {
         }
         //console.log(confObj);
 
-        var command = 'node_modules/.bin/nightwatch';
+        var command = config.nightwatchExecutable;
+
         var args = [];
 
         Object.keys(confObj).forEach(function (key) {
