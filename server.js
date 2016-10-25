@@ -1,6 +1,7 @@
 var bodyParser = require("body-parser");
 var open = require('open');
 var app = require('express')();
+var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 //app.io = io;
@@ -8,6 +9,9 @@ var io = require('socket.io')(http);
 function init (hostName, port) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
+    
+    // extend main paths to include local node_modules
+    require.main.paths.push(path.join(path.resolve(), 'node_modules'));
     
     var routes = require("./routes.js")(app);
 
