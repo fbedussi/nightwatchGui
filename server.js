@@ -4,6 +4,7 @@ var app = require('express')();
 var path = require('path');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var config = require('./config.js');
 //app.io = io;
 
 function init (hostName, port) {
@@ -11,8 +12,15 @@ function init (hostName, port) {
     app.use(bodyParser.urlencoded({extended: true}));
     
     // extend main paths to include local node_modules
-    require.main.paths.push(path.join(path.resolve(), 'node_modules'));
-    
+    if (require.main.paths.indexOf(config.mainNodeModulesPath) === -1) {
+        require.main.paths.push(config.mainNodeModulesPath);
+    }
+
+    console.log(require.main.paths);
+
+    // var process = require('process');
+    // process.chdir('C:\\Repository\\spy-dsquared2\\node_modules\\os-test-automation-common');
+
     var routes = require("./routes.js")(app);
 
     var server = http.listen(port, function () {

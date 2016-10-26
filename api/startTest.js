@@ -32,7 +32,7 @@ module.exports = function (paramObj, done) {
         }
         //console.log(confObj);
 
-        var command = config.nightwatchExecutable;
+        var command = path.join(config.mainNodeModulesPath, '.bin', 'nightwatch');
 
         var args = [];
 

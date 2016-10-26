@@ -8,9 +8,9 @@ try {
 }
 
 module.exports = {
-    nigthwatchConfigJsFolder: (configFile.nightwatchConfigJsFolder && configFile.nightwatchConfigJsFolder.length)? configFile.nightwatchConfigJsFolder : path.resolve(),
-    featuresParentFolder: (configFile.featuresParentFolder && configFile.featuresParentFolder.length)? configFile.featuresParentFolder : path.resolve(),
+    nigthwatchConfigJsFolder: (configFile.nightwatchConfigJsFolder && configFile.nightwatchConfigJsFolder.length)? path.normalize(configFile.nightwatchConfigJsFolder) : path.resolve(),
+    featuresParentFolder: (configFile.featuresParentFolder && configFile.featuresParentFolder.length)? path.normalize(configFile.featuresParentFolder) : path.resolve(),
     featuresFolderName: (configFile.featuresFolderName && configFile.featuresFolderName.length)? configFile.featuresFolderName : 'features',
     excludeFolders: (configFile.excludeFolders && configFile.excludeFolders.length)? configFile.excludeFolders : ['step_definitions'],
-    nightwatchExecutable: (configFile.nightwatchExecutable && configFile.nightwatchExecutable.length)? configFile.nightwatchExecutable :'node_modules/.bin/nightwatch'
+    mainNodeModulesPath: (configFile.mainNodeModulesPath && configFile.mainNodeModulesPath.length)? path.normalize(configFile.mainNodeModulesPath) : path.join(path.resolve(), 'node_modules')
 };
