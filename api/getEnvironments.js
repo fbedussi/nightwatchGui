@@ -16,7 +16,7 @@ module.exports = function (nightwatchConfJsFolder, done) {
 
         done(null, nightwatchConfig.test_settings);
     } catch (e) {
-        console.log(e);
-        done(null, {chrome:{}});
+         console.log(e);
+         done(null, {chrome:{}});
     }
 };

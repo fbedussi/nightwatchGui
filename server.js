@@ -18,8 +18,8 @@ function init (hostName, port) {
 
     console.log(require.main.paths);
 
-    // var process = require('process');
-    // process.chdir('C:\\Repository\\spy-dsquared2\\node_modules\\os-test-automation-common');
+    var process = require('process');
+    process.chdir('C:\\Repository\\spy-dsquared2\\node_modules\\os-test-automation-common');
 
     var routes = require("./routes.js")(app);
 
