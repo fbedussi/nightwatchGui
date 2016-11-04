@@ -9,14 +9,15 @@ function handleFileClick() {
 
         [].forEach.call(document.querySelectorAll('[name="selectFile"]'), function (btn) {
             btn.addEventListener('click', function (e) {
-                let parentFolderBtn = getSiblingByType(e.currentTarget.closest('fieldset').firstElementChild, 'dir');
-                let parentExcludeFolderBtn = getSiblingByType(e.currentTarget.closest('fieldset').firstElementChild, 'exclude');
+                let parentFieldset = e.currentTarget.closest('fieldset');
+                let parentFolderBtn = parentFieldset? getSiblingByType(parentFieldset.firstElementChild, 'dir') : null;
+                let parentExcludeFolderBtn = parentFieldset? getSiblingByType(parentFieldset.firstElementChild, 'exclude') : null;
 
-                if (!parentFolderBtn.checked) {
+                if (parentFolderBtn && !parentFolderBtn.checked) {
                     parentFolderBtn.checked = true;
                 }
 
-                if (parentExcludeFolderBtn.checked) {
+                if (parentExcludeFolderBtn && parentExcludeFolderBtn.checked) {
                     parentExcludeFolderBtn.checked = false;
                 }
 
