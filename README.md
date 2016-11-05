@@ -1,4 +1,4 @@
-#Nightwatch GUI
+#Nightwatch-cucumber GUI
 A simple, browser based, GUI (Graphical User Interface) to run test cases written in [Gherkin](<https://github.com/cucumber/cucumber/wiki/Gherkin>) to be run with [Nightwatch.js](<http://nightwatchjs.org/>) thanks to [nightwatch-cucumber](<https://github.com/mucsi96/nightwatch-cucumber>).
 
 ##Usage

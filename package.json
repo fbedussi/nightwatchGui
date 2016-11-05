@@ -1,6 +1,6 @@
 {
   "name": "nightwatch-gui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -11,11 +11,11 @@
   },
   "repository": "https://github.com/fbedussi/nightwatchGui.git",
   "config": {
-    "featuresParentFolder": "",
+    "featuresParentFolder": "C:\\Repository\\spy-dsquared2",
     "featuresFolderName": "features",
-    "nightwatchConfigJsFolder": "",
+    "nightwatchConfigJsFolder": "C:\\Repository\\spy-dsquared2",
     "excludeFolders": "['step_definitions']",
-    "nightwatchExecutable": ""
+    "mainNodeModulesPath": "C:\\Repository\\spy-dsquared2\\node_modules\\os-test-automation-common\\node_modules"
   },
   "author": "Francesco Bedussi",
   "license": "ISC",
