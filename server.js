@@ -16,11 +16,6 @@ function init (hostName, port) {
         require.main.paths.push(config.mainNodeModulesPath);
     }
 
-    console.log(require.main.paths);
-
-    var process = require('process');
-    process.chdir('C:\\Repository\\spy-dsquared2\\node_modules\\os-test-automation-common');
-
     var routes = require("./routes.js")(app);
 
     var server = http.listen(port, function () {
@@ -33,8 +28,6 @@ function init (hostName, port) {
             }
         });
     });
-
-
 }
 
 module.exports = {

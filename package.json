@@ -11,11 +11,11 @@
   },
   "repository": "https://github.com/fbedussi/nightwatchGui.git",
   "config": {
-    "featuresParentFolder": "C:\\Repository\\spy-dsquared2",
+    "featuresParentFolder": "",
     "featuresFolderName": "features",
-    "nightwatchConfigJsFolder": "C:\\Repository\\spy-dsquared2",
+    "nightwatchConfigJsFolder": "",
     "excludeFolders": "['step_definitions']",
-    "mainNodeModulesPath": "C:\\Repository\\spy-dsquared2\\node_modules\\os-test-automation-common\\node_modules"
+    "mainNodeModulesPath": ""
   },
   "author": "Francesco Bedussi",
   "license": "ISC",
