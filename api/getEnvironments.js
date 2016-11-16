@@ -7,7 +7,6 @@ module.exports = function (nightwatchConfJsFolder, done) {
     try {
         console.log('reading conf file:', path.join(nightwatchConfJsFolder, 'nightwatch.conf.js'));
         nightwatchConfig = require(path.join(nightwatchConfJsFolder, 'nightwatch.conf.js'));
-        //console.log(nightwatchConfig);
 
         if (typeof nightwatchConfig.test_settings !== 'object') {
             done('Wrong nightwatch configuration file');
@@ -16,7 +15,7 @@ module.exports = function (nightwatchConfJsFolder, done) {
 
         done(null, nightwatchConfig.test_settings);
     } catch (e) {
-         console.log(e);
+         console.log('ERROR: ', e);
          done(null, {chrome:{}});
     }
 };
