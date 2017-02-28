@@ -3,7 +3,7 @@ import insertInput from './insertInput';
 import {globalTags} from './globals';
 
 /**
- * @description recursively print features folder content
+ * @description recursively print features folder contentq
  * @param {featuresDataObj} obj
  * @param {element} parent - The parent element of the new line
  */
@@ -13,13 +13,20 @@ import {globalTags} from './globals';
  * @param obj {object}
  * @returns {Array}
  */
-function convertResponseObjToArray(obj) {
-    return Object.keys(obj).map(function(key) {
-        return Object.assign({},obj[key],{label: key});
+function convertResponseObjToArray(obj, parentId) {
+    return Object.keys(obj).map(function(key, index) {
+        return Object.assign(
+            {},
+            obj[key],
+            {
+                label: key,
+                id: parentId+'-'+index
+            }
+        );
     });
 }
 
-function insertLine (obj, parent) {
+function insertLine (obj, parent, parentId) {
     /**
      * @typedef {Object} featuresDataObj
      * @description a recursive object containing data on features
@@ -29,7 +36,11 @@ function insertLine (obj, parent) {
      * @property {array} tags - the tags eventually present in a feature
      */
 
-    var arr = convertResponseObjToArray(obj).sort(function(a,b) {
+    if(typeof parentId === 'undefined') {
+        parentId = '-';
+    }
+
+    var arr = convertResponseObjToArray(obj, parentId).sort(function(a,b) {
         return a.label > b.label;
     });
 
@@ -51,7 +62,7 @@ function insertLine (obj, parent) {
                 className: 'line',
                 dataPath: line.path,
                 dataType: 'file',
-                id: line.label,
+                id: line.id,
                 parent: parent
             });
         } else { //directories
@@ -88,7 +99,7 @@ function insertLine (obj, parent) {
                 labelClass: 'openClose',
                 dataPath: line.path,
                 dataType: 'close',
-                id: line.label + '_close',
+                id: line.id + '_close',
                 checked: true,
                 parent: fieldset
             });
@@ -101,7 +112,7 @@ function insertLine (obj, parent) {
                 labelClass: 'button selectFolder',
                 dataPath: line.path,
                 dataType: 'dir',
-                id: line.label + '_entire',
+                id: line.id + '_entire',
                 parent: fieldset
             });
             insertInput({
@@ -112,11 +123,11 @@ function insertLine (obj, parent) {
                 labelClass: 'button excludeFolder',
                 dataPath: line.path,
                 dataType: 'exclude',
-                id: line.label + '_entireExclude',
+                id: line.id + '_entireExclude',
                 parent: fieldset
             });
             fieldset.appendChild(div);
-            insertLine(line.subDir, div);
+            insertLine(line.subDir, div, line.id);
         }
     });
 }
