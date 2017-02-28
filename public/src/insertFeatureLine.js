@@ -20,7 +20,7 @@ function convertResponseObjToArray(obj, parentId) {
             obj[key],
             {
                 label: key,
-                id: parentId+'-'+index
+                id: parentId + '-' + index
             }
         );
     });
@@ -37,7 +37,7 @@ function insertLine (obj, parent, parentId) {
      */
 
     if(typeof parentId === 'undefined') {
-        parentId = '-';
+        parentId = 'root';
     }
 
     var arr = convertResponseObjToArray(obj, parentId).sort(function(a,b) {
