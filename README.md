@@ -1,7 +1,7 @@
-#Nightwatch-cucumber GUI
+# Nightwatch-cucumber GUI
 A simple, browser based, GUI (Graphical User Interface) to run test cases written in [Gherkin](<https://github.com/cucumber/cucumber/wiki/Gherkin>) to be run with [Nightwatch.js](<http://nightwatchjs.org/>) thanks to [nightwatch-cucumber](<https://github.com/mucsi96/nightwatch-cucumber>).
 
-##Usage
+## Usage
 Install the module from the npm registry either globally:
 ````
 npm install -g nightwatch-gui
@@ -40,10 +40,10 @@ or, if you don't want to mess up with the `package.json` file (for instance beca
 }
 ````
 
-##How it works
+## How it works
 It reads the nightwatch.config.js to get the enviroments defined, and it scrapes the "features" folder to get the features definitions. Then it displays both the environments and the features available on a web page where is possible to select the features to run by a combination of tags, folders and files. Finally it runs nightwatch-cucumber with the selected options.
 ![alt text](https://github.com/fbedussi/nightwatchGui/raw/master/screenshot.png)
 
 
-##Issues
+## Issues
 For any issues: [https://github.com/fbedussi/nightwatchGui/issues](https://github.com/fbedussi/nightwatchGui/issues)
