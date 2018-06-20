@@ -20,13 +20,14 @@
   "author": "Francesco Bedussi",
   "license": "ISC",
   "dependencies": {
-    "ansi-to-html": "^0.4.2",
-    "body-parser": "^1.15.0",
-    "cross-spawn": "^2.2.3",
-    "express": "^4.13.4",
-    "gherkin": "^4.0.0",
+    "ansi-to-html": "^0.6.4",
+    "body-parser": "^1.18.3",
+    "cross-spawn": "^6.0.5",
+    "express": "^4.16.3",
+    "gherkin": "^5.1.0",
+    "nightwatch": "^0.9.21",
     "open": "0.0.5",
-    "socket.io": "^1.4.6"
+    "socket.io": "^2.1.1"
   },
   "bin": {
     "nightwatchGui": "index.js"
