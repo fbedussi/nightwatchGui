@@ -5,7 +5,8 @@ body {
     padding: 1em;
 }
 
-h1, h2 {
+h1, 
+h2 {
     text-transform: uppercase;
 }
 
@@ -30,10 +31,6 @@ label {
 }
 
 .unselectable {
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -46,7 +43,8 @@ label {
     display: none;
 }
 
-.button, button {
+.button, 
+button {
     background: white;
     padding: 10px 20px;
     border: solid 1px black;
@@ -56,16 +54,19 @@ label {
     cursor: pointer;
 }
 
-input[class$="Btn"]:disabled + label, button:disabled {
+input[class$="Btn"]:disabled + label, 
+button:disabled {
     cursor: default;
     color: grey;
 }
 
-[class$="Btn"] + label.button:hover, button:not(:disabled):hover {
+[class$="Btn"] + label.button:hover, 
+button:not(:disabled):hover {
     background: lightgrey;
 }
 
-[class$="Btn"]:checked + label, button:active  {
+[class$="Btn"]:checked + label, 
+button:active  {
     background: black;
     color: white;
 }
@@ -87,7 +88,8 @@ input[class$="Btn"]:disabled + label, button:disabled {
     background: red;
 }
 
-.openTxt:before, .closeTxt:before {
+.openTxt:before, 
+.closeTxt:before {
     content: "";
     display: inline-block;
     border: solid 0.5em transparent;

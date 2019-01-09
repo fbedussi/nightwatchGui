@@ -1,6 +1,3 @@
-var host = 'http://'+document.location.host;
-var featureListReady = new Event('featureListReady', {"bubbles": true, "cancelable": false});
-
 import getRequest from './getRequest';
 import insertInput from './insertInput';
 import insertFeatureLine from './insertFeatureLine';
@@ -11,6 +8,9 @@ import handleFolderClick from './handleFolderClick';
 import handleFileClick from './handleFileClick';
 import resetClick from './resetClick';
 import {storeFeatures, globalTags} from './globals';
+
+var host = 'http://'+document.location.host;
+var featureListReady = new Event('featureListReady', {"bubbles": true, "cancelable": false});
 
 getRequest(host+'/environments', function (responseObj) {
     var parent = document.getElementById('environmentsFormInner');
