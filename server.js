@@ -14,6 +14,8 @@ function init(hostName, port) {
         require.main.paths.push(config.mainNodeModulesPath);
     }
 
+    var routes = require("./routes.js")(app);
+
     var server = http.listen(port, function () {
         console.log("Listening on port %s...", server.address().port);
 
