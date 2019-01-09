@@ -13,7 +13,7 @@ npm install --save-dev nightwatch-gui
 
 Then in the main folder of your nightwatch-cucumber project run:
 ````
-nightwatchGui
+nightwatch-gui
 ````
 
 The module assumes the standard nightwatch-cucumber foldering, where the main project folder contains both the ````nightwatch.conf.js```` file and the `features` folder containing the test cases written in Gherkin.
@@ -25,7 +25,6 @@ If your setup is different, you can customise all the paths in the `config` key 
     "featuresFolderName": "", //features 'features'
     "nightwatchConfigJsFolder": "", //default current folder
     "excludeFolders": "['step_definitions']",
-    "nightwatchExecutable": "" //default 'node_modules/.bin/nightwatch'
   }
 ````
 
@@ -36,7 +35,6 @@ or, if you don't want to mess up with the `package.json` file (for instance beca
     "featuresFolderName": "", //features 'features'
     "nightwatchConfigJsFolder": "", //default current folder
     "excludeFolders": "['step_definitions']",
-    "nightwatchExecutable": "" //default 'node_modules/.bin/nightwatch'
 }
 ````
 

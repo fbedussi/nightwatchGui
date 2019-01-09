@@ -9,7 +9,6 @@ var convert = new Convert();
 
 module.exports = function (paramObj, done) {
     try {
-        //console.log(paramObj);
         var confObj = {
             env: paramObj.environments.join(',')
         };
@@ -30,9 +29,8 @@ module.exports = function (paramObj, done) {
         if (paramObj.tagsExcluded) {
             confObj.skiptags = paramObj.tagsExcluded.join(',');
         }
-        //console.log(confObj);
 
-        var command = path.join(config.mainNodeModulesPath, '.bin', 'nightwatch');
+        var command = 'node --preserve-symlinks node_modules/nightwatch/bin/runner.js';
 
         var args = [];
 

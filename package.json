@@ -1,6 +1,6 @@
 {
   "name": "nightwatch-gui",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -14,8 +14,7 @@
     "featuresParentFolder": "",
     "featuresFolderName": "features",
     "nightwatchConfigJsFolder": "",
-    "excludeFolders": "['step_definitions']",
-    "mainNodeModulesPath": ""
+    "excludeFolders": "['step_definitions']"
   },
   "author": "Francesco Bedussi",
   "license": "ISC",
@@ -25,11 +24,11 @@
     "cross-spawn": "^6.0.5",
     "express": "^4.16.3",
     "gherkin": "^5.1.0",
-    "nightwatch": "^0.9.21",
     "open": "0.0.5",
     "socket.io": "^2.1.1"
   },
   "bin": {
-    "nightwatchGui": "index.js"
+    "nightwatchGui": "index.js",
+    "nightwatch-gui": "index.js"
   }
 }
