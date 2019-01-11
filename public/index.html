@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Spy Gui</title>
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -9,65 +10,85 @@
 </head>
 
 <body>
-<form id="filesForm">
-    <div class="section envWrapper unselectable">
-        <h1 class="envTitle">Select browser</h1>
-        <div id="environmentsFormInner"></div>
-    </div>
-    <div id="tagsFormWrapper" style="display: none" class="section unselectable">
-        <input id="tag_close" type="checkbox" class="closeBtn" checked="checked">
-        <label for="tag_close" class="openClose"><h1><span class="openTxt"></span><span class="closeTxt"></span>Select tag</h1></label>
-        <div id="tagsFormInner">
-            <div class="tagsDropArea row fullCol tagListWrapper">
-                <h2 class="unselectable">Tags list</h2>
-                <ul id="tagsList" class="tagList"></ul>
-            </div>
-            <div class="tagsDropAreaWrapper row">
-                <div id="tagsIncluded" class="tagsDropArea halfCol">
-                    <h2 class="unselectable">Tags included</h2>
-                    <ul class="tagList"></ul>
-                </div>
-                <div id="tagsExcluded" class="tagsDropArea halfCol">
-                    <h2 class="unselectable">Tags excluded</h2>
-                    <ul class="tagList"></ul>
-                </div>
-            </div>
-            <div id="featuresSelected" class="row">
-                <div class="halfCol">
-                    <h2>Features included</h2>
-                    <ul id="includedFeatures" class="featureList"></ul>
-                </div>
-                <div class="halfCol">
-                    <h2>Features excluded</h2>
-                    <ul id="excludeddFeatures" class="featureList"></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section unselectable">
-        <input id="feature_close" type="checkbox" class="closeBtn">
-        <label for="feature_close" class="openClose"><h1><span class="openTxt"></span><span class="closeTxt"></span>Select features</h1></label>
-        <input id="selectAll" checked="checked" type="radio" name="selectFolder" class="folderBtn" data-path="all"
-               data-type="dir">
-        <label for="selectAll" class="button selectFolder">select all</label>
-        <div id="filesFormInner" class="featureFiles">
+    <form id="filesForm">
 
+        <div class="card section envWrapper unselectable">
+            <div class="card-body">
+                <h1 class="card-title h5">Select browser</h5>
+                    <p id="environmentsFormInner" class="card-text"></p>
+            </div>
         </div>
-    </div>
-    <div class="section">
-        <input id="featureToRun_close" type="checkbox" class="closeBtn">
-        <label for="featureToRun_close" class="openClose"><h1><span class="openTxt"></span><span class="closeTxt"></span>Features to run</h1></label>
-        <div>
-        <ul id="featuresToRun"></ul>
-        </div>
-    </div>
-    <button type="submit" id="submitBtn">run test</button>
-    <button type="reset" id="resetButton">reset</button>
-</form>
-<div id="testRunningMsg" class="testRunningMsg" style="display: none">
-    <h2>the test is running</h2>
-</div>
 
-<script type="text/javascript" src="dist/main.js"></script>
+        <div id="tagsFormWrapper" style="display: none" class="card section unselectable">
+            <div class="card-body">
+                <input id="tag_close" type="checkbox" class="closeBtn" checked="checked">
+                <label for="tag_close" class="openClose">
+                    <h1 class="card-title h5"><span class="openTxt"></span><span class="closeTxt"></span>Select tag</h1>
+                </label>
+                <div id="tagsFormInner" class="tagsFormInner">
+                    <div class="tagsDropArea row fullCol tagListWrapper">
+                        <h2 class="unselectable h6 mb-2">Tags list</h2>
+                        <ul id="tagsList" class="tagList"></ul>
+                    </div>
+                    <div class="tagsDropAreaWrapper row">
+                        <div id="tagsIncluded" class="tagsDropArea tagsIncluded halfCol">
+                            <h2 class="unselectable h6 mb-2">Tags included</h2>
+                            <ul class="tagList"></ul>
+                        </div>
+                        <div id="tagsExcluded" class="tagsDropArea tagsExcluded halfCol">
+                            <h2 class="unselectable h6 mb-2">Tags excluded</h2>
+                            <ul class="tagList"></ul>
+                        </div>
+                    </div>
+                    <div id="featuresSelected" class="row">
+                        <div class="halfCol">
+                            <h2 class="h6 mb-2">Features included</h2>
+                            <ul id="includedFeatures" class="featureList"></ul>
+                        </div>
+                        <div class="halfCol">
+                            <h2 class="h6 mb-2">Features excluded</h2>
+                            <ul id="excludeddFeatures" class="featureList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card section unselectable">
+            <div class="card-body">
+                <input id="feature_close" type="checkbox" class="closeBtn">
+                <label for="feature_close" class="openClose">
+                    <h1 class="card-title h5"><span class="openTxt"></span><span class="closeTxt"></span>Select
+                        features</h1>
+                </label>
+                <input id="selectAll" checked="checked" type="radio" name="selectFolder" class="folderBtn" data-path="all"
+                    data-type="dir">
+                <label for="selectAll" class="btn btn-outline-dark selectFolder">select all</label>
+                <div id="filesFormInner" class="featureFiles">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card section">
+            <div class="card-body">
+
+                <input id="featureToRun_close" type="checkbox" class="closeBtn">
+                <label for="featureToRun_close" class="openClose">
+                    <h1 class="card-title h5"><span class="openTxt"></span><span class="closeTxt"></span>Features to
+                        run</h1>
+                </label>
+                <ul id="featuresToRun" class="featuresToRun"></ul>
+            </div>
+        </div>
+        <button type="submit" id="submitBtn" class="btn btn-primary">run test</button>
+        <button type="reset" id="resetButton" class="btn btn-secondary">reset</button>
+    </form>
+    <div id="testRunningMsg" class="testRunningMsg" style="display: none">
+        <h2>the test is running</h2>
+    </div>
+
+    <script type="text/javascript" src="dist/main.js"></script>
 </body>
+
 </html>

@@ -20,15 +20,19 @@ getRequest(host+'/environments', function (responseObj) {
     }
 
     Object.keys(responseObj).forEach(function (key) {
+        const inputParent = document.createElement('span');
+        inputParent.className = "btn btn-outline-dark mr-1 mb-1";
+        parent.appendChild(inputParent);
+
         insertInput({
             type: 'checkbox',
             value: key,
             labelText: key,
-            className: 'line',
+            className: 'mr-2',
             dataType: 'environment',
             id: key,
             checked: (key === 'chrome') ? 'checked' : false,
-            parent: parent
+            parent: inputParent
         });
     });
 });

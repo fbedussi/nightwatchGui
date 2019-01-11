@@ -34,7 +34,7 @@ or, if you don't want to mess up with the `package.json` file (for instance beca
     "featuresParentFolder": "", //default current folder
     "featuresFolderName": "", //features 'features'
     "nightwatchConfigJsFolder": "", //default current folder
-    "excludeFolders": "['step_definitions']",
+    "excludeFolders": "['step_definitions']"
 }
 ````
 

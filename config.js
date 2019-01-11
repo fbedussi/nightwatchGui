@@ -3,7 +3,7 @@ try {
     require.resolve(path.join(path.resolve(), 'nightwatch-gui-config.json'));
     var configFile = require(path.join(path.resolve(), 'nightwatch-gui-config.json'));
 } catch(e) {
-    console.log('No nightwatch-gui-config.json file found, using defaults in package.json');
+    console.error(e);
     var configFile = require('./package.json').config;
 }
 

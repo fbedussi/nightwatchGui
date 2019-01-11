@@ -1,0 +1,5 @@
+{
+    "featuresParentFolder": "C:\\f31\\spy-armanicom",
+    "nightwatchConfigJsFolder": "C:\\f31\\spy-armanicom",
+    "excludeFolders": "['step_definitions']"
+}

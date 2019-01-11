@@ -54,6 +54,9 @@ function insertLine (obj, parent, parentId) {
                 localTagsLabel = ' (TAG: ' + localTags.join(', ') + ')';
             }
 
+            const fileLine = document.createElement('li');
+            parent.appendChild(fileLine);
+
             insertInput({
                 type: 'radio',
                 name: 'selectFile',
@@ -63,7 +66,7 @@ function insertLine (obj, parent, parentId) {
                 dataPath: line.path,
                 dataType: 'file',
                 id: line.id,
-                parent: parent
+                parent: fileLine
             });
         } else { //directories
             var fieldset = createEl({
@@ -80,8 +83,8 @@ function insertLine (obj, parent, parentId) {
                 text: '',
                 class: 'openTxt'
             });
-            var div = createEl({
-                elTag: 'div',
+            var fileList = createEl({
+                elTag: 'ul',
                 class: 'featureFiles'
             });
             var openCloseContainer = document.createElement('span');
@@ -109,7 +112,7 @@ function insertLine (obj, parent, parentId) {
                 value: line.label,
                 labelText: 'select folder',
                 className: 'folderBtn',
-                labelClass: 'button selectFolder',
+                labelClass: 'btn btn-outline-dark mr-2 selectFolder',
                 dataPath: line.path,
                 dataType: 'dir',
                 id: line.id + '_entire',
@@ -120,14 +123,14 @@ function insertLine (obj, parent, parentId) {
                 value: line.value,
                 labelText: 'exclude folder',
                 className: 'folderBtn',
-                labelClass: 'button excludeFolder',
+                labelClass: 'btn btn-outline-dark excludeFolder',
                 dataPath: line.path,
                 dataType: 'exclude',
                 id: line.id + '_entireExclude',
                 parent: fieldset
             });
-            fieldset.appendChild(div);
-            insertLine(line.subDir, div, line.id);
+            fieldset.appendChild(fileList);
+            insertLine(line.subDir, fileList, line.id);
         }
     });
 }

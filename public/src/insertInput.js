@@ -16,6 +16,7 @@ function insertInput (attrObj) {
      * @property {boolean} checked
      * @property {string} dataPath - The path to folder/file to assign to data-path
      * @property {string} dataType - The value of data-type: 'environment', 'file', 'dir'
+     * @property {HTMLElement} parent
      */
     var el = document.createElement('input');
     var label = createEl({
