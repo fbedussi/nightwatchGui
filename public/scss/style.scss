@@ -152,7 +152,6 @@ form {
 
 .halfCol {
     width: calc(50% - 0.5em);
-    border: solid 1px black;
     padding: 0.5em;
 }
 
@@ -178,10 +177,6 @@ form {
 
 .halfCol ul li {
     word-break: break-all;
-}
-
-.tagsDropArea {
-    border: solid 1px black;
 }
 
 /*Feature section*/
