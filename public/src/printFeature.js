@@ -6,12 +6,15 @@
 function printFeature (featureArray, parent) {
     parent.innerHTML = '';
 
-    featureArray.forEach(function (feature) {
-        var featureEl = document.createElement('li');
-        var featureTxt = document.createTextNode(feature);
-        featureEl.appendChild(featureTxt);
-        parent.appendChild(featureEl);
-    });
+    featureArray
+        .sort()    
+        .forEach(function (feature) {
+            var featureEl = document.createElement('li');
+            var featureTxt = document.createTextNode(feature);
+            featureEl.appendChild(featureTxt);
+            parent.appendChild(featureEl);
+        })
+    ;
 }
 
 export default printFeature;

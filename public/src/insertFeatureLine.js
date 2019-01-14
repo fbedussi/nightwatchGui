@@ -44,7 +44,9 @@ function insertLine (obj, parent, parentId) {
         return a.label > b.label;
     });
 
-    arr.forEach(function(line) {
+    arr
+        .sort()
+        .forEach(function(line) {
         if (line.type === 'file') {
             //Collect tags
             let localTags = line.tags;
