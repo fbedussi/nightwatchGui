@@ -32,7 +32,7 @@ label {
 input[class$="Btn"]:disabled + label, 
 button:disabled {
     cursor: default;
-    color: $light;
+    opacity: 0.5;
 }
 
 [class$="Btn"]:checked + label, 
@@ -196,6 +196,7 @@ legend {
 
 .featureFiles {
     margin-top: 1em;
+    list-style-type: none;
 }
 
 .testRunningMsg {
