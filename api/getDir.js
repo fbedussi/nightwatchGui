@@ -32,17 +32,22 @@ module.exports = function walk (dir, done) {
                     } else {
                         let tags = [];
                         let data = fs.readFileSync(file, 'utf8');
-                        let gherkinDocument = parser.parse(data);
+                        try {
+                            let gherkinDocument = parser.parse(data);
+                            
+                            gherkinDocument.feature.tags.forEach(function (tag) {
+                                tags.push(tag.name.substr(1));
+                            });
+    
+                            results[fileName] = {
+                                type: 'file',
+                                path: file,
+                                tags: tags
+                            };
+                        } catch(e) {
+                            console.error('Syntax error in feature file ', file);
+                        }
                         
-                        gherkinDocument.feature.tags.forEach(function (tag) {
-                            tags.push(tag.name.substr(1));
-                        });
-
-                        results[fileName] = {
-                            type: 'file',
-                            path: file,
-                            tags: tags
-                        };
                         
                         if (!--pending) done(null, results);
                     }

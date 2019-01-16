@@ -1,6 +1,8 @@
 import createEl from './createEl';
 import insertInput from './insertInput';
 import {globalTags} from './globals';
+import ajaxPost from './ajaxPost';
+import {host} from './index';
 
 /**
  * @description recursively print features folder contentq
@@ -57,6 +59,7 @@ function insertLine (obj, parent, parentId) {
             }
 
             const fileLine = document.createElement('li');
+            fileLine.className = 'mb-2';
             parent.appendChild(fileLine);
 
             insertInput({
@@ -70,6 +73,13 @@ function insertLine (obj, parent, parentId) {
                 id: line.id,
                 parent: fileLine
             });
+
+            const editBtn = document.createElement('button');
+            editBtn.className = 'btn btn-info btn-sm ml-2'
+            editBtn.innerText = 'Edit file';
+            editBtn.type = 'button';
+            editBtn.onclick = () => ajaxPost({path: line.path}, host + '/open-file-in-editor');
+            fileLine.appendChild(editBtn)
         } else { //directories
             var fieldset = createEl({
                 elTag: 'fieldset',

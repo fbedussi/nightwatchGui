@@ -9,7 +9,8 @@ import handleFileClick from './handleFileClick';
 import resetClick from './resetClick';
 import {storeFeatures, globalTags} from './globals';
 
-var host = 'http://'+document.location.host;
+export const host = 'http://' + document.location.host;
+
 var featureListReady = new Event('featureListReady', {"bubbles": true, "cancelable": false});
 
 getRequest(host+'/environments', function (responseObj) {

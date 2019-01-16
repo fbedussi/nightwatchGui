@@ -13,7 +13,9 @@ function ajaxPost (dataObj, url, callback) {
         body: JSON.stringify(dataObj)
     }).then(function (response) {
         console.log('Form submit status: ', response.statusText);
-        callback();
+        if (typeof callback === 'function') {
+            callback();
+        }
     }).catch(function (err) {
         console.log('post error: ',err);
         alert('Server not responding, check if it\'s running');

@@ -5,6 +5,7 @@ var getDir = require('./api/getDir.js');
 var startTest = require('./api/startTest');
 var config = require('./config.js');
 
+
 module.exports = function (app) {
 
     app.use('/', express.static(path.join(__dirname, 'public')));
@@ -39,4 +40,19 @@ module.exports = function (app) {
         });
     });
     
+
+    function getCommandLine() {
+        switch (process.platform) { 
+           case 'darwin' : return 'open';
+           case 'win32' : return 'start';
+           case 'win64' : return 'start';
+           default : return 'xdg-open';
+        }
+     }
+    
+    app.post('/open-file-in-editor', function (req, res) {
+        const exec = require('child_process').exec;
+        exec(getCommandLine() + ' ' + req.body.path); 
+        res.status(200).send();
+    });
 };
